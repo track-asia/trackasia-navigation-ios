@@ -1,10 +1,10 @@
-# Contributing to the Maplibre Navigation SDK for iOS
+# Contributing to the Trackasia Navigation SDK for iOS
 
 ## Reporting an issue
 
 Bug reports and feature requests are more than welcome, but please consider the following tips so we can respond to your feedback more effectively.
 
-Before reporting a bug here, please determine whether the issue lies with the navigation SDK itself or with another Maplibre/Mapbox product:
+Before reporting a bug here, please determine whether the issue lies with the navigation SDK itself or with another Trackasia/Mapbox product:
 
 When reporting a bug in the navigation SDK itself, please indicate:
 

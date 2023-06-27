@@ -1,12 +1,12 @@
-[![MapLibre Logo](https://github.com/maplibre/maplibre-navigation-ios/blob/main/.github/splash-image-ios.png?raw=true)](https://maplibre.org)
+[![Trackasia Logo](https://github.com/track-asia-vn/trackasia-navigation-ios/blob/main/.github/splash-image-ios.png?raw=true)](https://maplibre.org)
 
-The Maplibre Navigation SDK for iOS is built on a fork of the [Mapbox Navigation SDK v0.21](https://github.com/maplibre/maplibre-navigation-ios/tree/v0.21.0) which is build on top of the [Mapbox Directions API](https://www.mapbox.com/directions) (v0.23.0) and contains logic needed to get timed navigation instructions.
+The Trackasia Navigation SDK for iOS is built on a fork of the [Mapbox Navigation SDK v0.21](https://github.com/track-asia-vn/trackasia-navigation-ios/tree/v0.21.0) which is build on top of the [Mapbox Directions API](https://www.mapbox.com/directions) (v0.23.0) and contains logic needed to get timed navigation instructions.
 
 With this SDK you can implement turn by turn navigation in your own iOS app while hosting your own Map tiles and Directions API.
 
 # Why have we forked
 
-1. Mapbox decided to put a closed source component to their navigation SDK and introduced a non open source license. Maplibre wants an open source solution.
+1. Mapbox decided to put a closed source component to their navigation SDK and introduced a non open source license. Trackasia wants an open source solution.
 2. Mapbox decided to put telemetry in their SDK. We couldn't turn this off without adjusting the source.
 3. We want to use the SDK without paying Mapbox for each MAU and without Mapbox API keys.
 
@@ -15,7 +15,7 @@ All issues are covered with this SDK.
 # What have we changed
 
 - Removed EventManager and all its references, this manager collected telemetry data which we don't want to send
-- Transitioned from the [Mapbox SDK](https://github.com/mapbox/mapbox-gl-native-ios) (version 4.3) to [Maplibre Maps SDK](https://github.com/maplibre/maplibre-gl-native) (version 5.12.2)
+- Transitioned from the [Mapbox SDK](https://github.com/mapbox/mapbox-gl-native-ios) (version 4.3) to [Trackasia Maps SDK](https://github.com/trackasia/trackasia-native) (version 5.12.2)
 - Added optional config parameter in NavigationMapView constructor to customize certain properties like route line color
 
 # Getting Started
@@ -33,10 +33,10 @@ If you are looking to include this inside your project, you have to follow the t
    - Change location to root of XCode project: `cd path/to/Project`
     - Create the Cartfile: `touch Cartfile`
    - New file will be added: `Cartfile`
-1. Add Maplibre Maps SPM (Swift Package Manager) depedency by going to your app's project file -> Package Dependencies -> Press the '+' -> https://github.com/maplibre/maplibre-gl-native-distribution -> 'Exact' 5.12.2 
+1. Add Trackasia Maps SPM (Swift Package Manager) depedency by going to your app's project file -> Package Dependencies -> Press the '+' -> https://github.com/track-asia-vn/trackasia-gl-native-distribution -> 'Exact' 5.12.2 
 1. Add dependencies to Cartfile
    ```
-   github "maplibre/maplibre-navigation-ios" ~> 1.0.6
+   github "track-asia-vn/trackasia-navigation-ios" ~> 1.0.6
    ```
 1. Build the frameworks
    - Open terminal
@@ -56,8 +56,8 @@ If you are looking to include this inside your project, you have to follow the t
 
 # Getting Help
 
-- **Have a bug to report?** [Open an issue](https://github.com/maplibre/maplibre-navigation-ios/issues). If possible, include the version of Maplibre Services, a full log, and a project that shows the issue.
-- **Have a feature request?** [Open an issue](https://github.com/maplibre/maplibre-navigation-ios/issues/new). Tell us what the feature should do and why you want the feature.
+- **Have a bug to report?** [Open an issue](https://github.com/track-asia-vn/trackasia-navigation-ios/issues). If possible, include the version of Trackasia Services, a full log, and a project that shows the issue.
+- **Have a feature request?** [Open an issue](https://github.com/track-asia-vn/trackasia-navigation-ios/issues/new). Tell us what the feature should do and why you want the feature.
 
 ## <a name="sample-code">Sample code
 
@@ -170,7 +170,7 @@ extension ViewController: RouteControllerDelegate {
 
 ## Community
 
-Join the #maplibre-native Slack channel at OSMUS: get an invite at https://slack.openstreetmap.us/
+Join the #trackasia-native Slack channel at OSMUS: get an invite at https://slack.openstreetmap.us/
 Read the [CONTRIBUTING.md](CONTRIBUTING.md) guide in order to get familiar with how we do things around here.
 
 # License
@@ -178,4 +178,4 @@ Read the [CONTRIBUTING.md](CONTRIBUTING.md) guide in order to get familiar with 
 Code is [licensed](LICENSE.md) under MIT and ISC. 
 ISC is meant to be functionally equivalent to the MIT license.
 
-Copyright (c) 2022 MapLibre contributors
+Copyright (c) 2023 Trackasia contributors
