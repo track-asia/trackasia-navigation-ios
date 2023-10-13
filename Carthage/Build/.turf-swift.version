@@ -1,0 +1,19 @@
+{
+  "commitish" : "v0.2.2",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "d9e3515f0eebaa2472f4f92f82203c73254aa5ac5646c112b726ed88657b1409",
+      "name" : "Turf",
+      "container" : "Turf.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "d1a176cbcdd333cb6ab105e678b29dd0e73c5db4fb1fa74f191b5d1144217542",
+      "name" : "Turf",
+      "container" : "Turf.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

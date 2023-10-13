@@ -1,0 +1,19 @@
+{
+  "commitish" : "3.0.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "cdaf84ac583c09638932079a06de6ecbb96935d9374912106b932b90d39fdfdb",
+      "name" : "Solar",
+      "container" : "Solar.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "371f4070d33108181ece7896d86aca91dc12a99c9ad53d9a977c8271187a7daf",
+      "name" : "Solar",
+      "container" : "Solar.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

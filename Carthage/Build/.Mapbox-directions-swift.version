@@ -1,0 +1,19 @@
+{
+  "commitish" : "v0.23.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "f75ec6f338453558cd2828e21cf38cc49f025678194e059ea396737b2db23fa4",
+      "name" : "MapboxDirections",
+      "container" : "MapboxDirections.xcframework",
+      "identifier" : "ios-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
+      "hash" : "469cc5b7215de31ba16d37860db24d5f99352699941f65e51f7157d68011e139",
+      "name" : "MapboxDirections",
+      "container" : "MapboxDirections.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    }
+  ]
+}

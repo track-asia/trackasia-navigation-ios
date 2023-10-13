@@ -1,0 +1,34 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Polyline
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import CoreLocation
+import Foundation
+import MapKit
+@_exported import Polyline
+import Swift
+import _Concurrency
+import _StringProcessing
+public struct Polyline {
+  public let coordinates: [Polyline.LocationCoordinate2D]?
+  public let encodedPolyline: Swift.String
+  public let levels: [Swift.UInt32]?
+  public let encodedLevels: Swift.String?
+  public var locations: [CoreLocation.CLLocation]? {
+    get
+  }
+  @available(tvOS 9.2, *)
+  public var mkPolyline: MapKit.MKPolyline? {
+    get
+  }
+  public init(coordinates: [Polyline.LocationCoordinate2D], levels: [Swift.UInt32]? = nil, precision: Swift.Double = 1e5)
+  public init(encodedPolyline: Swift.String, encodedLevels: Swift.String? = nil, precision: Swift.Double = 1e5)
+  public init(locations: [CoreLocation.CLLocation], levels: [Swift.UInt32]? = nil, precision: Swift.Double = 1e5)
+}
+public func encodeCoordinates(_ coordinates: [Polyline.LocationCoordinate2D], precision: Swift.Double = 1e5) -> Swift.String
+public func encodeLocations(_ locations: [CoreLocation.CLLocation], precision: Swift.Double = 1e5) -> Swift.String
+public func encodeLevels(_ levels: [Swift.UInt32]) -> Swift.String
+public func decodePolyline(_ encodedPolyline: Swift.String, precision: Swift.Double = 1e5) -> [Polyline.LocationCoordinate2D]?
+public func decodePolyline(_ encodedPolyline: Swift.String, precision: Swift.Double = 1e5) -> [CoreLocation.CLLocation]?
+public func decodeLevels(_ encodedLevels: Swift.String) -> [Swift.UInt32]?
+public typealias LocationCoordinate2D = CoreLocation.CLLocationCoordinate2D
