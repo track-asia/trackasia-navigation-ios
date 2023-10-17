@@ -1,0 +1,2 @@
+github "AliSoftware/OHHTTPStubs" ~> 9.0
+github "mapbox/mapbox-events-ios" ~> 0.10

@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/Solar.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		E8jLtCX67Z6o3OYrSFlXT3xOXks=
+		VwUg910Gej2bwzaHXBCq90sI598=
 		</data>
 		<key>Modules/Solar.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		BozTnVFmAX1vbHq6Bc+zoeJUgzc=
+		GSS7OxZMHLzejvVBoMa4Af1PxCM=
 		</data>
 		<key>Modules/Solar.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -66,22 +66,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			E8jLtCX67Z6o3OYrSFlXT3xOXks=
+			VwUg910Gej2bwzaHXBCq90sI598=
 			</data>
 			<key>hash2</key>
 			<data>
-			hzb9nXR1BouTVblMv/4wA0Z2BinqW28vKkTzFMw2GIw=
+			ZVvmpXEPWtfXb51makE0YBLqgh7n6sdJMF4KL4ALWfQ=
 			</data>
 		</dict>
 		<key>Modules/Solar.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BozTnVFmAX1vbHq6Bc+zoeJUgzc=
+			GSS7OxZMHLzejvVBoMa4Af1PxCM=
 			</data>
 			<key>hash2</key>
 			<data>
-			4BDy0ZrBvlCdgpHcqtioW4/eZhOmcGQ/ZEhsdhn00zI=
+			4FUqrOnRN8qjZBQsig+m1zIzKuS2JeFFbzTI+xvCGfU=
 			</data>
 		</dict>
 		<key>Modules/Solar.swiftmodule/arm64-apple-ios-simulator.abi.json</key>

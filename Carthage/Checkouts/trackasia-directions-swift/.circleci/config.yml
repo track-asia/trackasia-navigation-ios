@@ -1,0 +1,408 @@
+version: 2.1
+
+commands:
+    install-mapbox-token:
+         steps:
+             - run:
+                 name: Install Mapbox Access Token
+                 command: echo "foo" > ~/.mapbox
+
+    restore-cache:
+         steps:
+             - restore_cache:
+                 name: Restore cache
+                 keys:
+                    - carthage-v1-{{ .Environment.CIRCLE_JOB }}-{{ checksum "Cartfile.resolved" }}
+
+    save-cache:
+        steps:
+             - save_cache:
+                 key: carthage-v1-{{ .Environment.CIRCLE_JOB }}-{{ checksum "Cartfile.resolved" }}
+                 paths:
+                     - Carthage
+                     - Cartfile.resolved
+
+    install-carthage:
+        steps:
+            - run:
+                name: Install Carthage
+                command: |
+                    curl -OL "https://github.com/Carthage/Carthage/releases/download/0.38.0/Carthage.pkg"
+                    sudo installer -pkg Carthage.pkg -target /
+
+    publish-codecov:
+        steps:
+            - run:
+                name: Generate code coverage report
+                command: |
+                  xcrun llvm-cov export -arch $(uname -m) -format="lcov" \
+                    -instr-profile=$(find "${HOME}/Library/Developer/Xcode/DerivedData" -name '*.profdata' | head -n 1) \
+                    $(find "${HOME}/Library/Developer/Xcode/DerivedData" -ipath "*MapboxDirections.framework/MapboxDirections" | head -1) > coverage.lcov
+            - run:
+                name: Send code coverage
+                command: |
+                  curl -Os https://uploader.codecov.io/latest/macos/codecov
+                  chmod +x codecov
+                  ./codecov
+            - store_artifacts:
+                path: coverage.lcov
+    carthage-bootstrap:
+        steps:
+            - run:
+                name: Dependencies
+                command: carthage bootstrap --platform all --cache-builds --configuration Debug --use-xcframeworks
+    install-mbx-ci:
+      steps:
+        - run:
+            name: "Install MBX CI"
+            command: |
+              curl -Ls https://mapbox-release-engineering.s3.amazonaws.com/mbx-ci/latest/mbx-ci-darwin-amd64 > /usr/local/bin/mbx-ci
+              chmod 755 /usr/local/bin/mbx-ci
+    setup-write-repo-access:
+        steps:
+            - run:
+                name: Setup write access to the repo
+                command: |
+                    export GITHUB_TOKEN="$(mbx-ci github writer public token)"
+                    echo "export GITHUB_TOKEN='${GITHUB_TOKEN}'" >> $BASH_ENV
+                    git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/mapbox/mapbox-directions-swift.git"
+                    git config user.email "release-bot@mapbox.com"
+                    git config user.name "Mapbox Releases"
+
+step-library:
+  - &restore-cache-gems
+      restore_cache:
+        keys:
+          - 1-gems-{{ checksum "Gemfile.lock" }}
+
+  - &install-gems
+      run:
+        name: Install Gems
+        command: |
+          bundle config set path 'vendor/bundle'
+          bundle check || bundle install
+
+  - &save-cache-gems
+      save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+  - &restore-cache-podmaster
+      restore_cache:
+        keys:
+          - podmaster-cache
+
+  - &save-cache-podmaster
+      save_cache:
+        key: podmaster-cache
+        paths:
+          - "~/.cocoapods/repos/master"
+
+  - &prepare-netrc-file
+      run:
+        name: Prepare .netrc file
+        command: |
+          echo "machine api.mapbox.com" >> ~/.netrc
+          echo "login mapbox" >> ~/.netrc
+          echo "password $SDK_REGISTRY_TOKEN" >> ~/.netrc
+          chmod 0600 ~/.netrc
+
+  - &add-github-to-known-hosts
+      run:
+        name: Add GitHub to known hosts
+        command: |
+          for ip in $(dig @8.8.8.8 github.com +short); do ssh-keyscan github.com,$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+
+jobs:
+  detect-breaking-changes:
+    macos:
+      xcode: 13.4.1
+    steps:
+      - checkout
+      - install-mapbox-token
+      - run:
+          name: "Diagnose breaking changes"
+          command: |
+            swift package diagnose-api-breaking-changes \
+                --products MapboxDirections \
+                --baseline-dir swift-package-baseline \
+                --breakage-allowlist-path swift-package-baseline/breakage-allowlist-path.txt \
+                "$(cat swift-package-baseline/baseline.txt)" \
+              | tee diagnose-output.txt \
+              || TRUE
+      - run:
+          name: "Parse breaking changes"
+          command: |
+            EXIT_CODE=0
+            cat diagnose-output.txt | sed -n '/API breakage:/p' > breaking-changes.txt
+            if [ -s breaking-changes.txt ]; then
+              echo "Breaking changes detected"
+              cat breaking-changes.txt
+            else
+              rm breaking-changes.txt
+            fi
+      - store_artifacts:
+          path: breaking-changes.txt
+          destination: breaking-changes.txt
+      - run:
+          name: "Fail if breaking changes detected"
+          command: |
+            if [ -f breaking-changes.txt ]; then
+              exit 1
+            fi
+  spm-linux-job:
+    docker:
+      - image: swift:5.6
+    steps:
+      - checkout
+      - run: swift build
+      - run: swift test
+
+  spm-job:
+    parameters:
+      xcode:
+        type: string
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - run: swift build
+
+  carthage-integration-test:
+    parameters:
+      xcode:
+        type: string
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - install-mapbox-token
+      - install-carthage
+      - run:
+          name: "Create integration Cartfile"
+          command: |
+            echo 'github "mapbox/mapbox-directions-swift"' \"$CIRCLE_SHA1\" > Cartfile
+      - run:
+          name: "Build"
+          command: |
+            carthage bootstrap --platform all --use-netrc --use-xcframeworks
+  example-app-build:
+    macos:
+      xcode: "13.4.1"
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - install-mapbox-token
+      - install-carthage
+      - restore-cache
+      - carthage-bootstrap
+      - run:
+          name: "Build example app"
+          command: xcodebuild -sdk iphonesimulator -project MapboxDirections.xcodeproj -scheme 'Example' -destination 'platform=iOS Simulator,OS=15.5,name=iPhone 13 Pro Max' clean build
+      - save-cache
+
+  build-job:
+    parameters:
+      xcode:
+        type: string
+        default: "13.4.1"
+      device:
+        type: string
+        default: "iPhone 13"
+      iOS:
+        type: string
+        default: "15.5"
+      watchOS:
+        type: string
+        default: "8.5"
+      tvOS:
+        type: string
+        default: "15.4"
+      test:
+        type: boolean
+        default: true
+      codecoverage:
+        type: boolean
+        default: true
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - install-mapbox-token
+      - install-carthage
+      - restore-cache
+      - run:
+          name: Install prerequisites
+          command: |
+            if [ $(xcversion simulators | grep -cF "iOS << parameters.iOS >> Simulator (installed)") -eq 0 ]; then xcversion simulators --install="iOS << parameters.iOS >>" || true; fi
+      - carthage-bootstrap
+      - run:
+          name: iOS
+          command: xcodebuild -sdk iphonesimulator -project MapboxDirections.xcodeproj -scheme 'MapboxDirections iOS' -destination 'platform=iOS Simulator,OS=<< parameters.iOS >>,name=<< parameters.device >>' clean build <<# parameters.test >>test<</ parameters.test >><<# parameters.codecoverage >> -enableCodeCoverage "YES"<</ parameters.codecoverage >>
+      - when:
+          condition: << parameters.codecoverage >>
+          steps:
+            - publish-codecov
+      - run:
+          name: tvOS
+          command: xcodebuild -project MapboxDirections.xcodeproj -scheme 'MapboxDirections tvOS' -destination 'platform=tvOS Simulator,name=Apple TV,OS=<< parameters.tvOS >>' clean build <<# parameters.test >>test <</ parameters.test >> <<# parameters.codecoverage >>-enableCodeCoverage YES<</ parameters.codecoverage >>
+      - when:
+          condition: << parameters.codecoverage >>
+          steps:
+            - publish-codecov
+      - run:
+          name: macOS
+          command: xcodebuild -project MapboxDirections.xcodeproj -scheme 'MapboxDirections Mac' clean build<<# parameters.test >> test <</ parameters.test >><<# parameters.codecoverage >>-enableCodeCoverage YES<</ parameters.codecoverage >>
+      - run:
+          name: watchOS
+          command: xcodebuild -project MapboxDirections.xcodeproj -scheme 'MapboxDirections watchOS' -destination 'platform=watchOS Simulator,name=Apple Watch Series 5 - 44mm,OS=<< parameters.watchOS >>' clean build
+      - save-cache
+
+  publish-documentation:
+    macos:
+      xcode: "12.5.1"
+    steps:
+      - checkout
+      - install-mapbox-token
+      - install-carthage
+      - install-mbx-ci
+      - run:
+          name: Generate Documentation
+          command: |
+            ./scripts/publish-documentation.sh << pipeline.git.tag >>
+      - setup-write-repo-access
+      - run:
+          name: "Push Generated Documentation"
+          command: |
+            git push origin $(git rev-parse --abbrev-ref HEAD):publisher-production
+
+  update-version-job:
+    parameters:
+      xcode:
+        type: string
+        default: "13.4.1"
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - *restore-cache-gems
+      - *restore-cache-podmaster
+      - *install-gems
+      - *prepare-netrc-file
+      - *add-github-to-known-hosts
+      - install-mbx-ci
+      - run:
+          name: Update version
+          command: |
+            export GITHUB_WRITER_TOKEN=$(mbx-ci github writer public token)
+            git remote set-url origin "https://x-access-token:$GITHUB_WRITER_TOKEN@github.com/mapbox/mapbox-directions-swift"
+            git config --global user.email no-reply@mapbox.com && git config --global user.name mapbox-ci
+            VERSION=$( echo << pipeline.git.branch >> | sed 's/^trigger-update-version-//' )
+            ./scripts/update-version.sh v$VERSION
+      - *save-cache-podmaster
+      - *save-cache-gems
+
+  distribute-version-job:
+    parameters:
+      xcode:
+        type: string
+        default: "13.4.1"
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - *restore-cache-gems
+      - *restore-cache-podmaster
+      - *install-gems
+      - *prepare-netrc-file
+      - *add-github-to-known-hosts
+      - install-mbx-ci
+      - run:
+          name: Update version
+          command: |
+            VERSION=$( echo << pipeline.git.branch >> | sed 's/^trigger-distribute-version-//' )
+            if [[ $VERSION == *alpha* || $VERSION == *beta* || $VERSION == *rc* ]]; then
+                pod repo update && pod trunk push MapboxDirections-pre.podspec
+              else
+                pod repo update && pod trunk push MapboxDirections.podspec
+            fi
+      - *save-cache-podmaster
+      - *save-cache-gems
+
+  integration-test-with-navigation-sdk:
+    parameters:
+      xcode:
+        type: string
+    macos:
+      xcode: << parameters.xcode >>
+    environment:
+      HOMEBREW_NO_AUTO_UPDATE: 1
+    steps:
+      - checkout
+      - install-mapbox-token
+      - *prepare-netrc-file
+      - run:
+          name: "Build IntegrationWithNavigationSDK"
+          command: |
+            cd ..
+            mv project mapbox-directions-swift
+            cd mapbox-directions-swift/IntegrationWithNavigationSDK
+            mv MapboxNavigationSwiftUI.xcodeproj.disabled MapboxNavigationSwiftUI.xcodeproj
+            xcodebuild -resolvePackageDependencies
+            xcodebuild -scheme MapboxNavigationSwiftUI -destination 'generic/platform=iOS Simulator' -sdk iphonesimulator -configuration Release
+workflows:
+  workflow:
+    jobs:
+      - detect-breaking-changes:
+          name: "Detect Breaking Changes"
+      - build-job:
+          name: "Dev Build: Xcode 13.4.1"
+      - carthage-integration-test:
+          name: "Carthage Integration Test 13.4.1"
+          xcode: "13.4.1"
+      - carthage-integration-test:
+          name: "Carthage Integration Test 14.0.0"
+          xcode: "14.0.0"
+      - spm-job:
+          name: "SPM build 13.4.1"
+          xcode: "13.4.1"
+      - spm-job:
+          name: "SPM build 14.1.0"
+          xcode: "14.1.0"
+      - spm-linux-job:
+          name: "SPM Ubuntu build"
+      - example-app-build:
+          name: "Build example app"
+      - integration-test-with-navigation-sdk:
+          name: "Integration Test With Navigation SDK"
+          xcode: "14.2.0"
+      - publish-documentation:
+          name: "Publish Documentation"
+          filters:
+            tags:
+              only: /^v\d+\.\d+\.\d+(-.+)?$/
+            branches:
+              ignore: /.*/
+  update-version-workflow:
+    jobs:
+      - update-version-job:
+          filters:
+            branches:
+              only: /^trigger-update-version-.*/
+  distribute-version-workflow:
+    jobs:
+      - distribute-version-job:
+          filters:
+            branches:
+              only: /^trigger-distribute-version-.*/

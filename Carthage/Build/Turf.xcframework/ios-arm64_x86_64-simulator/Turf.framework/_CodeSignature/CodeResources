@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/Turf.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		bHxIplHJNnM1uK0/5kd9A6EtZ+w=
+		w9pJ1mouUrg5IOdC1wmztulvwhc=
 		</data>
 		<key>Modules/Turf.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		3RzVtJfdnon2SFsegEf9rJ6k/Cg=
+		nzVZmdTNAhFeDKRl4WPitgOEma4=
 		</data>
 		<key>Modules/Turf.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/Turf.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		j8SIee+lKTNTDRmZEbULmQS9ejk=
+		kq5YdGl7a+FGBTl/CS+Hg26wgI0=
 		</data>
 		<key>Modules/Turf.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Turf.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		jIz+e/KiuB9saWQD8ReHgxoOFzM=
+		t7vOKm4pXBIcFr154dU93FNlvZ0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -77,14 +77,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EyA2GYH2e+9iRROGsiKSfg5epDuVZzFxvdFotrqxedM=
+			S3W5pdo3c76LUz6q2iGlIfsX7omSwKeT/CDIYg+rMVo=
 			</data>
 		</dict>
 		<key>Modules/Turf.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sHpm0p17ZfCzLo5RswLw9jSMLkFcJsia5XoAxgGCSIE=
+			5/b952wSr8B/mhvxM+vy7R/xmW9YWLh49aJmk4gHpV4=
 			</data>
 		</dict>
 		<key>Modules/Turf.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -105,7 +105,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9Des3c4upy+gPaWImTJysSwSrb1e29ba0sV5PeMGeNw=
+			4x4piYxtPKSenhKLfGrFrIIHPPjqj3ac+0zixEDFWE8=
 			</data>
 		</dict>
 		<key>Modules/Turf.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -126,7 +126,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jnjeKcV/QtaHxTA2NgI3wIUrd0pV1ZyZmaqQtjad79I=
+			xp+PpoBBW8CXtJD/TH3lYDCEk7cTTqEc9HAGxVLBNNw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

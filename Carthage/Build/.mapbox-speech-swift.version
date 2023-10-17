@@ -10,7 +10,7 @@
     },
     {
       "swiftToolchainVersion" : "5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)",
-      "hash" : "a037af7d401bdcfe2f37655712a5b2ae4ee44cc7a151f3f4b8f303148f61e615",
+      "hash" : "a1159ef83aaaa9d28d84c4eaa6c4566ae26c7b5dbc43e7ca205d7c98df0b17e3",
       "name" : "MapboxSpeech",
       "container" : "MapboxSpeech.xcframework",
       "identifier" : "ios-arm64_x86_64-simulator"

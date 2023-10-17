@@ -9,7 +9,7 @@ private typealias RouteRequestSuccess = (([Route]) -> Void)
 private typealias RouteRequestFailure = ((NSError) -> Void)
 
 
-class ViewController: UIViewController, MGLMapViewDelegate {
+class ViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var longPressHintView: UIView!
@@ -18,6 +18,8 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     @IBOutlet weak var bottomBar: UIView!
     @IBOutlet weak var clearMap: UIButton!
     @IBOutlet weak var bottomBarBackground: UIView!
+    
+    var locationManager = CLLocationManager()
     
     // MARK: Properties
     var mapView: NavigationMapView? {
@@ -104,7 +106,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.mapView = NavigationMapView(frame: view.bounds, styleURL: nil)
+        self.mapView = NavigationMapView(frame: view.bounds, styleURL: URL(string: "https://tiles.track-asia.com/tiles/v1/style-streets.json?key=public"))
 
         // Reset the navigation styling to the defaults if we are returning from a presentation.
         if (presentedViewController != nil) {
@@ -272,6 +274,27 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         let singleTap = UILongPressGestureRecognizer(target: self, action: #selector(didLongPress(tap:)))
         mapView.gestureRecognizers?.filter({ $0 is UILongPressGestureRecognizer }).forEach(singleTap.require(toFail:))
         mapView.addGestureRecognizer(singleTap)
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            let latitude = 10.8509//location.coordinate.latitude
+            let longitude = 106.9578//location.coordinate.longitude
+
+            let currentLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+
+            mapView?.setCenter(currentLocation,zoomLevel: 10, animated: true)
+            locationManager.stopUpdatingLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error updating location: \(error.localizedDescription)")
     }
 
     func mapView(_ mapView: MGLMapView, didFinishLoading style: MGLStyle) {
