@@ -1699,9 +1699,9 @@
 			buildPhases = (
 				C5ADFBC41DDCC7840011824B /* Sources */,
 				C5ADFBC61DDCC7840011824B /* Headers */,
+				99EEB33F2AEB9BE4000666C6 /* Embed Frameworks */,
 				C5ADFBC71DDCC7840011824B /* Resources */,
 				35A7DBEB1E3A1C59000BAB5C /* Frameworks */,
-				99EEB33F2AEB9BE4000666C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -3153,6 +3153,7 @@
 					"@loader_path/Frameworks",
 				);
 				NEW_SETTING = "";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mapbox.MapboxCoreNavigation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -3324,7 +3325,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/track-asia/trackasia-gl-native-distribution";
 			requirement = {
-				branch = 1.0.2;
+				branch = 1.0.3;
 				kind = branch;
 			};
 		};
