@@ -1,0 +1,1266 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "Polyline"
+      },
+      {
+        "kind": "Import",
+        "name": "MapKit",
+        "printedName": "MapKit",
+        "declKind": "Import",
+        "moduleName": "Polyline"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Polyline",
+        "printedName": "Polyline",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "coordinates",
+            "printedName": "coordinates",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[CoreLocation.CLLocationCoordinate2D]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CLLocationCoordinate2D",
+                        "printedName": "CoreLocation.CLLocationCoordinate2D",
+                        "usr": "c:@S@CLLocationCoordinate2D"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV11coordinatesSaySo22CLLocationCoordinate2DVGSgvp",
+            "mangledName": "$s8PolylineAAV11coordinatesSaySo22CLLocationCoordinate2DVGSgvp",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[CoreLocation.CLLocationCoordinate2D]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CLLocationCoordinate2D",
+                            "printedName": "CoreLocation.CLLocationCoordinate2D",
+                            "usr": "c:@S@CLLocationCoordinate2D"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV11coordinatesSaySo22CLLocationCoordinate2DVGSgvg",
+                "mangledName": "$s8PolylineAAV11coordinatesSaySo22CLLocationCoordinate2DVGSgvg",
+                "moduleName": "Polyline",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodedPolyline",
+            "printedName": "encodedPolyline",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV07encodedA0SSvp",
+            "mangledName": "$s8PolylineAAV07encodedA0SSvp",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV07encodedA0SSvg",
+                "mangledName": "$s8PolylineAAV07encodedA0SSvg",
+                "moduleName": "Polyline",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "levels",
+            "printedName": "levels",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.UInt32]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt32]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt32",
+                        "printedName": "Swift.UInt32",
+                        "usr": "s:s6UInt32V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV6levelsSays6UInt32VGSgvp",
+            "mangledName": "$s8PolylineAAV6levelsSays6UInt32VGSgvp",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.UInt32]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.UInt32]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "UInt32",
+                            "printedName": "Swift.UInt32",
+                            "usr": "s:s6UInt32V"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV6levelsSays6UInt32VGSgvg",
+                "mangledName": "$s8PolylineAAV6levelsSays6UInt32VGSgvg",
+                "moduleName": "Polyline",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encodedLevels",
+            "printedName": "encodedLevels",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV13encodedLevelsSSSgvp",
+            "mangledName": "$s8PolylineAAV13encodedLevelsSSSgvp",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV13encodedLevelsSSSgvg",
+                "mangledName": "$s8PolylineAAV13encodedLevelsSSSgvg",
+                "moduleName": "Polyline",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "locations",
+            "printedName": "locations",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[CoreLocation.CLLocation]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[CoreLocation.CLLocation]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CLLocation",
+                        "printedName": "CoreLocation.CLLocation",
+                        "usr": "c:objc(cs)CLLocation"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV9locationsSaySo10CLLocationCGSgvp",
+            "mangledName": "$s8PolylineAAV9locationsSaySo10CLLocationCGSgvp",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[CoreLocation.CLLocation]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[CoreLocation.CLLocation]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CLLocation",
+                            "printedName": "CoreLocation.CLLocation",
+                            "usr": "c:objc(cs)CLLocation"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV9locationsSaySo10CLLocationCGSgvg",
+                "mangledName": "$s8PolylineAAV9locationsSaySo10CLLocationCGSgvg",
+                "moduleName": "Polyline",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "mkPolyline",
+            "printedName": "mkPolyline",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "MapKit.MKPolyline?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "MKPolyline",
+                    "printedName": "MapKit.MKPolyline",
+                    "usr": "c:objc(cs)MKPolyline"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:8PolylineAAV02mkA0So10MKPolylineCSgvp",
+            "mangledName": "$s8PolylineAAV02mkA0So10MKPolylineCSgvp",
+            "moduleName": "Polyline",
+            "intro_tvOS": "9.2",
+            "declAttributes": [
+              "AccessControl",
+              "Available",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "MapKit.MKPolyline?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "MKPolyline",
+                        "printedName": "MapKit.MKPolyline",
+                        "usr": "c:objc(cs)MKPolyline"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:8PolylineAAV02mkA0So10MKPolylineCSgvg",
+                "mangledName": "$s8PolylineAAV02mkA0So10MKPolylineCSgvg",
+                "moduleName": "Polyline",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(coordinates:levels:precision:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Polyline",
+                "printedName": "Polyline.Polyline",
+                "usr": "s:8PolylineAAV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocationCoordinate2D",
+                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "usr": "c:@S@CLLocationCoordinate2D"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.UInt32]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt32]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt32",
+                        "printedName": "Swift.UInt32",
+                        "usr": "s:s6UInt32V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PolylineAAV11coordinates6levels9precisionABSaySo22CLLocationCoordinate2DVG_Says6UInt32VGSgSdtcfc",
+            "mangledName": "$s8PolylineAAV11coordinates6levels9precisionABSaySo22CLLocationCoordinate2DVG_Says6UInt32VGSgSdtcfc",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(encodedPolyline:encodedLevels:precision:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Polyline",
+                "printedName": "Polyline.Polyline",
+                "usr": "s:8PolylineAAV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PolylineAAV07encodedA00B6Levels9precisionABSS_SSSgSdtcfc",
+            "mangledName": "$s8PolylineAAV07encodedA00B6Levels9precisionABSS_SSSgSdtcfc",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(locations:levels:precision:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Polyline",
+                "printedName": "Polyline.Polyline",
+                "usr": "s:8PolylineAAV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[CoreLocation.CLLocation]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.UInt32]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.UInt32]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UInt32",
+                        "printedName": "Swift.UInt32",
+                        "usr": "s:s6UInt32V"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "hasDefaultArg": true,
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:8PolylineAAV9locations6levels9precisionABSaySo10CLLocationCG_Says6UInt32VGSgSdtcfc",
+            "mangledName": "$s8PolylineAAV9locations6levels9precisionABSaySo10CLLocationCG_Says6UInt32VGSgSdtcfc",
+            "moduleName": "Polyline",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:8PolylineAAV",
+        "mangledName": "$s8PolylineAAV",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Function",
+        "name": "encodeCoordinates",
+        "printedName": "encodeCoordinates(_:precision:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Array",
+            "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocationCoordinate2D",
+                "printedName": "CoreLocation.CLLocationCoordinate2D",
+                "usr": "c:@S@CLLocationCoordinate2D"
+              }
+            ],
+            "usr": "s:Sa"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Double",
+            "printedName": "Swift.Double",
+            "hasDefaultArg": true,
+            "usr": "s:Sd"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline17encodeCoordinates_9precisionSSSaySo22CLLocationCoordinate2DVG_SdtF",
+        "mangledName": "$s8Polyline17encodeCoordinates_9precisionSSSaySo22CLLocationCoordinate2DVG_SdtF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "encodeLocations",
+        "printedName": "encodeLocations(_:precision:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Array",
+            "printedName": "[CoreLocation.CLLocation]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CLLocation",
+                "printedName": "CoreLocation.CLLocation",
+                "usr": "c:objc(cs)CLLocation"
+              }
+            ],
+            "usr": "s:Sa"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Double",
+            "printedName": "Swift.Double",
+            "hasDefaultArg": true,
+            "usr": "s:Sd"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline15encodeLocations_9precisionSSSaySo10CLLocationCG_SdtF",
+        "mangledName": "$s8Polyline15encodeLocations_9precisionSSSaySo10CLLocationCG_SdtF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "encodeLevels",
+        "printedName": "encodeLevels(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Array",
+            "printedName": "[Swift.UInt32]",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "UInt32",
+                "printedName": "Swift.UInt32",
+                "usr": "s:s6UInt32V"
+              }
+            ],
+            "usr": "s:Sa"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline12encodeLevelsySSSays6UInt32VGF",
+        "mangledName": "$s8Polyline12encodeLevelsySSSays6UInt32VGF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "decodePolyline",
+        "printedName": "decodePolyline(_:precision:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "[CoreLocation.CLLocationCoordinate2D]?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[CoreLocation.CLLocationCoordinate2D]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocationCoordinate2D",
+                    "printedName": "CoreLocation.CLLocationCoordinate2D",
+                    "usr": "c:@S@CLLocationCoordinate2D"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Double",
+            "printedName": "Swift.Double",
+            "hasDefaultArg": true,
+            "usr": "s:Sd"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline06decodeA0_9precisionSaySo22CLLocationCoordinate2DVGSgSS_SdtF",
+        "mangledName": "$s8Polyline06decodeA0_9precisionSaySo22CLLocationCoordinate2DVGSgSS_SdtF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "decodePolyline",
+        "printedName": "decodePolyline(_:precision:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "[CoreLocation.CLLocation]?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[CoreLocation.CLLocation]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CLLocation",
+                    "printedName": "CoreLocation.CLLocation",
+                    "usr": "c:objc(cs)CLLocation"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "Double",
+            "printedName": "Swift.Double",
+            "hasDefaultArg": true,
+            "usr": "s:Sd"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline06decodeA0_9precisionSaySo10CLLocationCGSgSS_SdtF",
+        "mangledName": "$s8Polyline06decodeA0_9precisionSaySo10CLLocationCGSgSS_SdtF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Function",
+        "name": "decodeLevels",
+        "printedName": "decodeLevels(_:)",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "Optional",
+            "printedName": "[Swift.UInt32]?",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.UInt32]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UInt32",
+                    "printedName": "Swift.UInt32",
+                    "usr": "s:s6UInt32V"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "usr": "s:Sq"
+          },
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          }
+        ],
+        "declKind": "Func",
+        "usr": "s:8Polyline12decodeLevelsySays6UInt32VGSgSSF",
+        "mangledName": "$s8Polyline12decodeLevelsySays6UInt32VGSgSSF",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "funcSelfKind": "NonMutating"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Polyline",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CoreLocation",
+        "printedName": "CoreLocation",
+        "declKind": "Import",
+        "moduleName": "Polyline"
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 3431,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 4076,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 4768,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 5408,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "StringLiteral",
+      "offset": 5510,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 6406,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "StringLiteral",
+      "offset": 6796,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 7257,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7471,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 7567,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 7589,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 8664,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9223,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9946,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 9981,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10056,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10376,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10477,
+      "length": 4,
+      "value": "0x1F"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10525,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10564,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10616,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10767,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 10805,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "FloatLiteral",
+      "offset": 11124,
+      "length": 3,
+      "value": "1e5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11268,
+      "length": 4,
+      "value": "0x1F"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11307,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11374,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11403,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11473,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11562,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11603,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11633,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11663,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11672,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11724,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11760,
+      "length": 1,
+      "value": "6"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11782,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11791,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11889,
+      "length": 4,
+      "value": "0x01"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11898,
+      "length": 4,
+      "value": "0x01"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11942,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11993,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "Array",
+      "offset": 12909,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13287,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13293,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13342,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13420,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13432,
+      "length": 1,
+      "value": "5"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14035,
+      "length": 2,
+      "value": "63"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14041,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Volumes\/DATA\/ADVN-GIT\/TRACK-CLIENT\/TRACK-IOS\/TrackCustomer\/Carthage\/Checkouts\/trackasia-polyline\/Sources\/Polyline\/Polyline.swift",
+      "kind": "IntegerLiteral",
+      "offset": 14049,
+      "length": 4,
+      "value": "0x20"
+    }
+  ]
+}
