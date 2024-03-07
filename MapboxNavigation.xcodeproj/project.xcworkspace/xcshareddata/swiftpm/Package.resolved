@@ -1,12 +1,12 @@
 {
   "pins" : [
     {
-      "identity" : "trackasia-gl-native-distribution",
+      "identity" : "maplibre-gl-native-distribution",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/track-asia/trackasia-gl-native-distribution",
+      "location" : "https://github.com/maplibre/maplibre-gl-native-distribution",
       "state" : {
-        "branch" : "1.0.2",
-        "revision" : "0c75488f7e2481bf32552bbe5746471c8fe67294"
+        "revision" : "d761956e81e74d8bdbfba31e0ec3a75616190658",
+        "version" : "5.12.2"
       }
     }
   ],
