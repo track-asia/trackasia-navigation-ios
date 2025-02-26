@@ -30,7 +30,10 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("resources")]
+            resources: [.process("resources")],
+            cSettings: [
+                .headerSearchPath("include")
+            ]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
