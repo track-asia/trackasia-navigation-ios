@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "trackasia-gl-native-distribution",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/track-asia/trackasia-gl-native-distribution.git",
+      "state" : {
+        "revision" : "6886ba2f567b0c2822162189f91fcc3f76c98801",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "polyline",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/raphaelmor/Polyline",
@@ -34,15 +43,6 @@
       "state" : {
         "revision" : "9df3b01f477163b33d5e63c5e2e5b9f946a49c56",
         "version" : "0.53.6"
-      }
-    },
-    {
-      "identity" : "trackasia-gl-native-distribution",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/track-asia/trackasia-gl-native-distribution.git",
-      "state" : {
-        "revision" : "6886ba2f567b0c2822162189f91fcc3f76c98801",
-        "version" : "2.0.0"
       }
     },
     {

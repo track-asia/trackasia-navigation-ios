@@ -15,7 +15,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		99FF154A2D6D73E400A8D5D9 /* TrackAsia.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TrackAsia.xcframework; path = ../../../../../../Users/sangnguyen/Downloads/TrackAsia.xcframework; sourceTree = "<group>"; };
 		CD958B472BF6156100501F93 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD958B4A2BF6156100501F93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD958B4C2BF6156100501F93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +72,6 @@
 		CD958B662BF63B3500501F93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				99FF154A2D6D73E400A8D5D9 /* TrackAsia.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
