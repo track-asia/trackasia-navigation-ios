@@ -1,4 +1,5 @@
 {
+  "originHash" : "41c763a4273d8318aaa4320bd3097a8bd6d28679c1b9048900f102bae18ecaee",
   "pins" : [
     {
       "identity" : "mapbox-directions-swift",
@@ -28,24 +29,6 @@
       }
     },
     {
-      "identity" : "swiftformat",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat.git",
-      "state" : {
-        "revision" : "05cb325003a673b3d177c711b3bc909cfee07622",
-        "version" : "0.53.9"
-      }
-    },
-    {
-      "identity" : "trackasia-gl-native-distribution",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/track-asia/trackasia-gl-native-distribution.git",
-      "state" : {
-        "revision" : "6886ba2f567b0c2822162189f91fcc3f76c98801",
-        "version" : "2.0.0"
-      }
-    },
-    {
       "identity" : "turf-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/turf-swift.git",
@@ -55,5 +38,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

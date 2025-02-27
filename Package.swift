@@ -25,13 +25,13 @@ let package = Package(
         .target(
             name: "MapboxCoreNavigation",
             dependencies: [
+                "MapboxCoreNavigationObjC",
                 .product(name: "Turf", package: "turf-swift"),
-                .product(name: "MapboxDirections", package: "mapbox-directions-swift"),
-                "MapboxCoreNavigationObjC"
+                .product(name: "MapboxDirections", package: "mapbox-directions-swift")
             ],
             path: "MapboxCoreNavigation",
             resources: [.process("resources")],
-            publicHeadersPath: "include"
+            publicHeadersPath: "."
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
@@ -52,7 +52,7 @@ let package = Package(
         .target(
             name: "MapboxNavigationObjC",
             dependencies: [
-                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
+                // Ensure this does not create a back-reference to 'MapboxNavigation' or 'MapboxCoreNavigation'
             ],
             path: "MapboxNavigationObjC"
         ),

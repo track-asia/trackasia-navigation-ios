@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		99AB8E6A2D700EEC00208F3F /* TrackAsia in Frameworks */ = {isa = PBXBuildFile; productRef = 99AB8E692D700EEC00208F3F /* TrackAsia */; };
+		99AB8E6D2D700EF800208F3F /* MapboxNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 99AB8E6C2D700EF800208F3F /* MapboxNavigation */; };
 		CD958B4B2BF6156100501F93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4A2BF6156100501F93 /* AppDelegate.swift */; };
 		CD958B4D2BF6156100501F93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD958B4C2BF6156100501F93 /* SceneDelegate.swift */; };
 		CD958B542BF6156200501F93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD958B532BF6156200501F93 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AB8E6A2D700EEC00208F3F /* TrackAsia in Frameworks */,
+				99AB8E6D2D700EF800208F3F /* MapboxNavigation in Frameworks */,
 				CD958B682BF63B3500501F93 /* MapboxNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +98,8 @@
 			name = Example;
 			packageProductDependencies = (
 				CD958B672BF63B3500501F93 /* MapboxNavigation */,
+				99AB8E692D700EEC00208F3F /* TrackAsia */,
+				99AB8E6C2D700EF800208F3F /* MapboxNavigation */,
 			);
 			productName = "navigation sample";
 			productReference = CD958B472BF6156100501F93 /* Example.app */;
@@ -124,6 +130,8 @@
 			);
 			mainGroup = CD958B3E2BF6156100501F93;
 			packageReferences = (
+				99AB8E682D700EEC00208F3F /* XCLocalSwiftPackageReference "../../trackasia-gl-native-distribution" */,
+				99AB8E6B2D700EF800208F3F /* XCLocalSwiftPackageReference "../../trackasia-navigation-ios" */,
 			);
 			productRefGroup = CD958B482BF6156100501F93 /* Products */;
 			projectDirPath = "";
@@ -368,7 +376,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		99AB8E682D700EEC00208F3F /* XCLocalSwiftPackageReference "../../trackasia-gl-native-distribution" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../trackasia-gl-native-distribution";
+		};
+		99AB8E6B2D700EF800208F3F /* XCLocalSwiftPackageReference "../../trackasia-navigation-ios" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../trackasia-navigation-ios";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		99AB8E692D700EEC00208F3F /* TrackAsia */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TrackAsia;
+		};
+		99AB8E6C2D700EF800208F3F /* MapboxNavigation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MapboxNavigation;
+		};
 		CD958B672BF63B3500501F93 /* MapboxNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MapboxNavigation;
