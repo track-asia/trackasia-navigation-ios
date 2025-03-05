@@ -30,8 +30,7 @@ let package = Package(
                 .product(name: "MapboxDirections", package: "mapbox-directions-swift")
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("resources")],
-            publicHeadersPath: "."
+            resources: [.process("resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
@@ -52,7 +51,7 @@ let package = Package(
         .target(
             name: "MapboxNavigationObjC",
             dependencies: [
-                // Ensure this does not create a back-reference to 'MapboxNavigation' or 'MapboxCoreNavigation'
+                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
             path: "MapboxNavigationObjC"
         ),
