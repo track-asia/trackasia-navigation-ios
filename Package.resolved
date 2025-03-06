@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/track-asia/trackasia-gl-native-distribution.git",
       "state" : {
-        "revision" : "0153751588bed1dce5a1b5c7519c0172244fc47a",
-        "version" : "2.0.1"
+        "revision" : "da4b52fd427d2666e18fef8b0009ad6ea706b354",
+        "version" : "2.0.2"
       }
     },
     {
