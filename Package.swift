@@ -43,8 +43,7 @@ let package = Package(
                 .product(name: "MapboxDirections", package: "mapbox-directions-swift")
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("Resources")],
-            publicHeadersPath: ""
+            resources: [.process("Resources")]
         ),
         .target(
             name: "MapboxNavigation",
