@@ -30,13 +30,12 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("resources")],
-            publicHeadersPath: "include"
+            publicHeadersPath: "Include",  // Add this line
+            resources: [.process("resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "include"
+            path: "MapboxCoreNavigationObjC"
         ),
         .target(
             name: "MapboxNavigation",
@@ -55,8 +54,7 @@ let package = Package(
             dependencies: [
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
-            path: "MapboxNavigationObjC",
-            publicHeadersPath: "include"
+            path: "MapboxNavigationObjC"
         ),
         .testTarget(
             name: "MapboxNavigationTests",
