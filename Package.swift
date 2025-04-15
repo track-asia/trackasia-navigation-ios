@@ -18,6 +18,18 @@ let package = Package(
             targets: [
                 "MapboxCoreNavigation"
             ]
+        ),
+        .library(
+            name: "MapboxCoreNavigationObjC",
+            targets: [
+                "MapboxCoreNavigationObjC"
+            ]
+        ),
+        .library(
+            name: "MapboxNavigationObjC",
+            targets: [
+                "MapboxNavigationObjC"
+            ]
         )
     ],
     dependencies: [
@@ -42,7 +54,11 @@ let package = Package(
             name: "MapboxCoreNavigationObjC",
             dependencies: [],
             path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "include"
+            exclude: [],
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include")
+            ]
         ),
         .target(
             name: "MapboxNavigation",
@@ -59,10 +75,16 @@ let package = Package(
         .target(
             name: "MapboxNavigationObjC",
             dependencies: [
+                "MapboxCoreNavigationObjC",
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
             path: "MapboxNavigationObjC",
-            publicHeadersPath: "include"
+            exclude: [],
+            publicHeadersPath: "include",
+            cSettings: [
+                .headerSearchPath("include"),
+                .headerSearchPath(".")
+            ]
         ),
         .testTarget(
             name: "MapboxNavigationTests",
@@ -73,24 +95,6 @@ let package = Package(
             ],
             path: "MapboxNavigationTests",
             resources: [
-                // NOTE: Ideally we would just put all resources like route.json and Assets.xcassets in Folder 'Resources'
-                // but an Xcode/SPM bug is preventing us from doing so. It is not possible to copy and process files into the same
-                // destination directiory ('*.bundle/Resources') without a code signing error:
-                // This is the error message:
-                //	CodeSign ~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle  (in target 'trackasia-navigation-ios_MapboxNavigationTests' from project 'trackasia-navigation-ios')
-                //	cd ~/Developer/trackasia-navigation-ios
-                //
-                //	Signing Identity:     "-"
-                //
-                //	/usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der ~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle
-                //
-                //	~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle: bundle format unrecognized, invalid, or unsuitable
-                //	Command CodeSign failed with a nonzero exit code
-                //
-                // Instead the json files are placed in a Folder called 'Fixtures' and manually specified for copying
-                // The Assets.xcassets is compiled into an Assets.car
-                // This results in a flat Bundle file structure however the tests pass.
-				
                 .process("Assets.xcassets"),
                 .copy("Fixtures/EmptyStyle.json"),
                 .copy("Fixtures/route.json"),
