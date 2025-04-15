@@ -18,32 +18,23 @@ let package = Package(
         .package(url: "https://github.com/flitsmeister/mapbox-directions-swift", exact: "0.23.3"),
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.8.0"),
         .package(url: "https://github.com/ceeK/Solar.git", exact: "3.0.1"),
-        .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6"),
-        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "main")
+        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "2.0.3")
+        .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6")
     ],
     targets: [
         .target(
-            name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "include"
-        ),
-        .target(
-            name: "MapboxNavigationObjC",
-            dependencies: [
-                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
-            ],
-            path: "MapboxNavigationObjC",
-            publicHeadersPath: "include"
-        ),
-        .target(
             name: "MapboxCoreNavigation",
             dependencies: [
-                "MapboxCoreNavigationObjC",
                 .product(name: "Turf", package: "turf-swift"),
-                .product(name: "MapboxDirections", package: "mapbox-directions-swift")
+                .product(name: "MapboxDirections", package: "mapbox-directions-swift"),
+                "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
             resources: [.process("Resources")]
+        ),
+        .target(
+            name: "MapboxCoreNavigationObjC",
+            path: "MapboxCoreNavigationObjC"
         ),
         .target(
             name: "MapboxNavigation",
@@ -56,6 +47,13 @@ let package = Package(
             resources: [
                 .copy("Resources/Assets.xcassets")
             ]
+        ),
+        .target(
+            name: "MapboxNavigationObjC",
+            dependencies: [
+                .product(name: "MapLibre", package: "maplibre-gl-native-distribution")
+            ],
+            path: "MapboxNavigationObjC"
         ),
         .testTarget(
             name: "MapboxNavigationTests",
