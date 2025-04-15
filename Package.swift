@@ -51,7 +51,7 @@ let package = Package(
         .target(
             name: "MapboxNavigationObjC",
             dependencies: [
-                .product(name: "MapLibre", package: "maplibre-gl-native-distribution")
+                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
             path: "MapboxNavigationObjC"
         ),
