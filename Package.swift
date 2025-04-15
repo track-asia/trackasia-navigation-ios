@@ -12,6 +12,12 @@ let package = Package(
             targets: [
                 "MapboxNavigation"
             ]
+        ),
+        .library(
+            name: "MapboxCoreNavigation",
+            targets: [
+                "MapboxCoreNavigation"
+            ]
         )
     ],
     dependencies: [
@@ -30,10 +36,11 @@ let package = Package(
                 .product(name: "MapboxDirections", package: "mapbox-directions-swift")
             ],
             path: "MapboxCoreNavigation",
-            resources: [.process("resources")]
+            resources: [.process("Resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
+            dependencies: [],
             path: "MapboxCoreNavigationObjC",
             publicHeadersPath: "include"
         ),
