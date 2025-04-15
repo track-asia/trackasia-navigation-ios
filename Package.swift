@@ -12,24 +12,6 @@ let package = Package(
             targets: [
                 "MapboxNavigation"
             ]
-        ),
-        .library(
-            name: "MapboxCoreNavigation",
-            targets: [
-                "MapboxCoreNavigation"
-            ]
-        ),
-        .library(
-            name: "MapboxCoreNavigationObjC",
-            targets: [
-                "MapboxCoreNavigationObjC"
-            ]
-        ),
-        .library(
-            name: "MapboxNavigationObjC",
-            targets: [
-                "MapboxNavigationObjC"
-            ]
         )
     ],
     dependencies: [
@@ -48,6 +30,7 @@ let package = Package(
                 .product(name: "MapboxDirections", package: "mapbox-directions-swift")
             ],
             path: "MapboxCoreNavigation",
+            exclude: ["include"],
             resources: [.process("Resources")]
         ),
         .target(
@@ -68,6 +51,7 @@ let package = Package(
                 .product(name: "Solar", package: "Solar")
             ],
             path: "MapboxNavigation",
+            exclude: ["include"],
             resources: [
                 .copy("Resources/Assets.xcassets")
             ]
