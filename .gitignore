@@ -147,4 +147,6 @@ xcuserdata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+.history
+
 # End of https://www.toptal.com/developers/gitignore/api/xcode,swiftpackagemanager,swiftpm,swift,macos,carthage

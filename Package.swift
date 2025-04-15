@@ -30,11 +30,13 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
+            publicHeadersPath: "include", // Thêm dòng này (hoặc "." nếu headers ở thư mục gốc)
             resources: [.process("resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC"
+            path: "MapboxCoreNavigationObjC",
+            publicHeadersPath: "." // Thêm dòng này
         ),
         .target(
             name: "MapboxNavigation",
@@ -44,6 +46,7 @@ let package = Package(
                 .product(name: "Solar", package: "Solar")
             ],
             path: "MapboxNavigation",
+            publicHeadersPath: "include", // Thêm dòng này (hoặc "." nếu headers ở thư mục gốc)
             resources: [
                 .copy("Resources/Assets.xcassets")
             ]
@@ -53,7 +56,8 @@ let package = Package(
             dependencies: [
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
-            path: "MapboxNavigationObjC"
+            path: "MapboxNavigationObjC",
+            publicHeadersPath: "." // Thêm dòng này
         ),
         .testTarget(
             name: "MapboxNavigationTests",
