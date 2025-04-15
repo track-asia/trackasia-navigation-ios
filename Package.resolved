@@ -1,4 +1,4 @@
- {
+{
   "pins" : [
     {
       "identity" : "mapbox-directions-swift",
@@ -30,10 +30,10 @@
     {
       "identity" : "swiftformat",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/nicklockwood/SwiftFormat",
+      "location" : "https://github.com/nicklockwood/SwiftFormat.git",
       "state" : {
-        "revision" : "9df3b01f477163b33d5e63c5e2e5b9f946a49c56",
-        "version" : "0.53.6"
+        "revision" : "468a7d32dedc8d352c191594b3b45d9fd8ba291b",
+        "version" : "0.55.5"
       }
     },
     {
@@ -41,8 +41,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/track-asia/trackasia-gl-native-distribution.git",
       "state" : {
-        "revision" : "530697abce50eb89b466916ad0ec3a7e3f1cfcdf",
-        "version" : "2.0.3"
+        "branch" : "main",
+        "revision" : "530697abce50eb89b466916ad0ec3a7e3f1cfcdf"
       }
     },
     {
