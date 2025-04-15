@@ -19,9 +19,20 @@ let package = Package(
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.8.0"),
         .package(url: "https://github.com/ceeK/Solar.git", exact: "3.0.1"),
         .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6"),
-        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", exact: "2.0.3")
+        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", revision: "530697abce50eb89b466916ad0ec3a7e3f1cfcdf")
     ],
     targets: [
+        .target(
+            name: "MapboxCoreNavigationObjC",
+            path: "MapboxCoreNavigationObjC"
+        ),
+        .target(
+            name: "MapboxNavigationObjC",
+            dependencies: [
+                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
+            ],
+            path: "MapboxNavigationObjC"
+        ),
         .target(
             name: "MapboxCoreNavigation",
             dependencies: [
@@ -31,10 +42,6 @@ let package = Package(
             ],
             path: "MapboxCoreNavigation",
             resources: [.process("Resources")]
-        ),
-        .target(
-            name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC"
         ),
         .target(
             name: "MapboxNavigation",
@@ -47,13 +54,6 @@ let package = Package(
             resources: [
                 .copy("Resources/Assets.xcassets")
             ]
-        ),
-        .target(
-            name: "MapboxNavigationObjC",
-            dependencies: [
-                .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
-            ],
-            path: "MapboxNavigationObjC"
         ),
         .testTarget(
             name: "MapboxNavigationTests",
