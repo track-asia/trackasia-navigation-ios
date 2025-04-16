@@ -13,12 +13,6 @@ let package = Package(
                 "MapboxNavigation"
             ]
         ),
-        .library(
-            name: "MapboxCoreNavigation",
-            targets: [
-                "MapboxCoreNavigation"
-            ]
-        )
     ],
     dependencies: [
         .package(url: "https://github.com/flitsmeister/mapbox-directions-swift", exact: "0.23.3"),
@@ -41,7 +35,6 @@ let package = Package(
         .target(
             name: "MapboxCoreNavigationObjC",
             path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "include"
         ),
         .target(
             name: "MapboxNavigation",
