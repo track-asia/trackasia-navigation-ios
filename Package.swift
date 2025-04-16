@@ -12,12 +12,6 @@ let package = Package(
             targets: [
                 "MapboxNavigation"
             ]
-        ),
-        .library(
-            name: "MapboxCoreNavigation",
-            targets: [
-                "MapboxCoreNavigation"
-            ]
         )
     ],
     dependencies: [
@@ -40,8 +34,7 @@ let package = Package(
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "include"
+            path: "MapboxCoreNavigationObjC"
         ),
         .target(
             name: "MapboxNavigation",
