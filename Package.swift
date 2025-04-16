@@ -12,12 +12,6 @@ let package = Package(
             targets: [
                 "MapboxNavigation"
             ]
-        ),
-        .library(
-            name: "MapboxNavigationObjc", 
-            targets: [
-                "MapboxNavigationObjc"
-            ]
         )
     ],
     dependencies: [
@@ -46,7 +40,7 @@ let package = Package(
             name: "MapboxNavigation",
             dependencies: [
                 "MapboxCoreNavigation",
-                "MapboxNavigationObjc",
+                "MapboxNavigationObjC",
                 .product(name: "Solar", package: "Solar")
             ],
             path: "MapboxNavigation",
@@ -55,12 +49,11 @@ let package = Package(
             ]
         ),
         .target(
-            name: "MapboxNavigationObjc",
+            name: "MapboxNavigationObjC",
             dependencies: [
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
-            path: "MapboxNavigationObjc",
-            publicHeadersPath: "include"
+            path: "MapboxNavigationObjC"
         ),
         .testTarget(
             name: "MapboxNavigationTests",

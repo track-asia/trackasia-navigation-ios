@@ -1,6 +1,4 @@
-#pragma once
-
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 //! Project version number for MapboxNavigation.
 FOUNDATION_EXPORT double MapboxNavigationVersionNumber;
@@ -9,4 +7,8 @@ FOUNDATION_EXPORT double MapboxNavigationVersionNumber;
 FOUNDATION_EXPORT const unsigned char MapboxNavigationVersionString[];
 
 #import "../MBRouteVoiceController.h"
-#import "../TrackAsiaWrapper.h" 
+#if __has_include(<TrackAsia/Mapbox.h>)
+#import <TrackAsia/Mapbox.h>
+#elif __has_include(<TrackAsia/TrackAsia.h>)
+#import <TrackAsia/TrackAsia.h>
+#endif
