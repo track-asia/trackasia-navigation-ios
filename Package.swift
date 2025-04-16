@@ -24,13 +24,12 @@ let package = Package(
     targets: [
         .target(
             name: "MapboxCoreNavigation",
-            dependencies: [
-                .product(name: "Turf", package: "turf-swift"),
-                .product(name: "MapboxDirections", package: "mapbox-directions-swift"),
-                "MapboxCoreNavigationObjC"
-            ],
-            path: "MapboxCoreNavigation",
-            resources: [.process("resources")]
+            dependencies: [...],
+            path: "Sources/MapboxCoreNavigation",
+            publicHeadersPath: "include",  // Đảm bảo dòng này đúng
+            cSettings: [
+                .headerSearchPath("include")
+            ]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
