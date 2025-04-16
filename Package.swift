@@ -17,9 +17,15 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/flitsmeister/mapbox-directions-swift", exact: "0.23.3"),
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.8.0"),
+<<<<<<< Updated upstream
         .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "2.0.3"),
         .package(url: "https://github.com/ceeK/Solar.git", exact: "3.0.1"),
         .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6")
+=======
+        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "2.0.3")
+        .package(url: "https://github.com/ceeK/Solar.git", exact: "3.0.1"),
+        .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6"),
+>>>>>>> Stashed changes
     ],
     targets: [
         .target(
@@ -30,11 +36,19 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
+<<<<<<< Updated upstream
             resources: [.process("resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
             path: "MapboxCoreNavigationObjC",
+=======
+            resources: [.process("Resources")]
+        ),
+        .target(
+            name: "MapboxCoreNavigationObjC",
+            path: "MapboxCoreNavigationObjC"
+>>>>>>> Stashed changes
         ),
         .target(
             name: "MapboxNavigation",
@@ -53,7 +67,11 @@ let package = Package(
             dependencies: [
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
+<<<<<<< Updated upstream
             path: "MapboxNavigationObjC"
+=======
+            path: "MapboxNavigationObjC",
+>>>>>>> Stashed changes
         ),
         .testTarget(
             name: "MapboxNavigationTests",
