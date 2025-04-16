@@ -17,9 +17,9 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/flitsmeister/mapbox-directions-swift", exact: "0.23.3"),
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.8.0"),
+        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "2.0.3"),
         .package(url: "https://github.com/ceeK/Solar.git", exact: "3.0.1"),
-        .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6"),
-        .package(url: "https://github.com/track-asia/trackasia-gl-native-distribution.git", branch: "2.0.3")
+        .package(url: "https://github.com/nicklockwood/SwiftFormat.git", from: "0.53.6")
     ],
     targets: [
         .target(
@@ -30,13 +30,11 @@ let package = Package(
                 "MapboxCoreNavigationObjC"
             ],
             path: "MapboxCoreNavigation",
-            publicHeadersPath: "include", // Thêm dòng này (hoặc "." nếu headers ở thư mục gốc)
             resources: [.process("resources")]
         ),
         .target(
             name: "MapboxCoreNavigationObjC",
-            path: "MapboxCoreNavigationObjC",
-            publicHeadersPath: "." // Thêm dòng này
+            path: "MapboxCoreNavigationObjC"
         ),
         .target(
             name: "MapboxNavigation",
@@ -46,7 +44,6 @@ let package = Package(
                 .product(name: "Solar", package: "Solar")
             ],
             path: "MapboxNavigation",
-            publicHeadersPath: "include", // Thêm dòng này (hoặc "." nếu headers ở thư mục gốc)
             resources: [
                 .copy("Resources/Assets.xcassets")
             ]
@@ -56,8 +53,7 @@ let package = Package(
             dependencies: [
                 .product(name: "TrackAsia", package: "trackasia-gl-native-distribution")
             ],
-            path: "MapboxNavigationObjC",
-            publicHeadersPath: "." // Thêm dòng này
+            path: "MapboxNavigationObjC"
         ),
         .testTarget(
             name: "MapboxNavigationTests",
@@ -68,6 +64,24 @@ let package = Package(
             ],
             path: "MapboxNavigationTests",
             resources: [
+                // NOTE: Ideally we would just put all resources like route.json and Assets.xcassets in Folder 'Resources'
+                // but an Xcode/SPM bug is preventing us from doing so. It is not possible to copy and process files into the same
+                // destination directiory ('*.bundle/Resources') without a code signing error:
+                // This is the error message:
+                //	CodeSign ~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle  (in target 'trackasia-navigation-ios_MapboxNavigationTests' from project 'trackasia-navigation-ios')
+                //	cd ~/Developer/trackasia-navigation-ios
+                //
+                //	Signing Identity:     "-"
+                //
+                //	/usr/bin/codesign --force --sign - --timestamp\=none --generate-entitlement-der ~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle
+                //
+                //	~/Library/Developer/Xcode/DerivedData/trackasia-navigation-ios-cdijqyqwjamndzfaqhxchbiayzsb/Build/Products/Debug-iphonesimulator/trackasia-navigation-ios_MapboxNavigationTests.bundle: bundle format unrecognized, invalid, or unsuitable
+                //	Command CodeSign failed with a nonzero exit code
+                //
+                // Instead the json files are placed in a Folder called 'Fixtures' and manually specified for copying
+                // The Assets.xcassets is compiled into an Assets.car
+                // This results in a flat Bundle file structure however the tests pass.
+				
                 .process("Assets.xcassets"),
                 .copy("Fixtures/EmptyStyle.json"),
                 .copy("Fixtures/route.json"),
