@@ -1,0 +1,12 @@
+module MapboxNavigationObjc {
+    umbrella header "include/MapboxNavigation.h"
+    export *
+    
+    module * { export * }
+    
+    // Link với TrackAsia
+    link "TrackAsia"
+    
+    // Khai báo framework dependency
+    requires objc
+} 
