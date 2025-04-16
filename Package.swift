@@ -13,7 +13,7 @@ let package = Package(
                 "MapboxNavigation"
             ]
         ),
-    ],ssssss
+    ],
     dependencies: [
         .package(url: "https://github.com/flitsmeister/mapbox-directions-swift", exact: "0.23.3"),
         .package(url: "https://github.com/mapbox/turf-swift.git", from: "2.8.0"),
