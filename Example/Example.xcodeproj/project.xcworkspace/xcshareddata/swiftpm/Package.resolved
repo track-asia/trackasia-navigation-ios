@@ -1,5 +1,4 @@
 {
-  "originHash" : "41c763a4273d8318aaa4320bd3097a8bd6d28679c1b9048900f102bae18ecaee",
   "pins" : [
     {
       "identity" : "mapbox-directions-swift",
@@ -29,6 +28,15 @@
       }
     },
     {
+      "identity" : "swiftformat",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/nicklockwood/SwiftFormat.git",
+      "state" : {
+        "revision" : "fb7ce2e469c18017c92523c93fd3b1b9757a4dd1",
+        "version" : "0.58.7"
+      }
+    },
+    {
       "identity" : "turf-swift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mapbox/turf-swift.git",
@@ -38,5 +46,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

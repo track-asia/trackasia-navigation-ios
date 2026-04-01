@@ -5,6 +5,9 @@
 //  Created by Patrick Kladek on 16.05.24.
 //
 
+import MapboxCoreNavigation
+import MapboxDirections
+import MapboxNavigation
 import TrackAsia
 import UIKit
 
