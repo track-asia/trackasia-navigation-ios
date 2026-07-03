@@ -1,6 +1,6 @@
-[![TrackAsia Logo](https://github.com/track-asia/trackasia-navigation-ios/images/bg_trackasia.png?raw=true)](https://track-asia.com)
+[![TrackAsia Logo](images/bg_trackasia.png)](https://track-asia.com)
 
-The Trackasia Navigation SDK for iOS is built on a fork of the [Mapbox Navigation SDK v0.21](https://github.com/track-asia/trackasia-navigation-ios/tree/v0.21.0) which is build on top of the [Mapbox Directions API](https://www.mapbox.com/directions) (v0.23.0) and contains logic needed to get timed navigation instructions.
+The Trackasia Navigation SDK for iOS is built on a fork of the [Mapbox Navigation SDK v0.21](https://github.com/mapbox/mapbox-navigation-ios/tree/v0.21.0) which is build on top of the [Mapbox Directions API](https://www.mapbox.com/directions) (v0.23.0) and contains logic needed to get timed navigation instructions.
 
 With this SDK you can implement turn by turn navigation in your own iOS app while hosting your own Map tiles and Directions API.
 
