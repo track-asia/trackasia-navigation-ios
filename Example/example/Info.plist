@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1Ijoic2FuZ25ndXllbjI1IiwiYSI6ImNsMGU0djFicjBmYzczam4wbnpmdjVrcGcifQ.s-R3of1BK-vomakvEGkgYw</string>
+	<string>YOUR_TRACKASIA_ACCESS_TOKEN</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
