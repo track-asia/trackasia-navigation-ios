@@ -69,6 +69,9 @@ If you are looking to include this inside your project, you have to follow the t
 
 Install this package using the [Swift Package Manager](https://www.swift.org/documentation/package-manager/).
 
+> 📚 **Complete iOS Guide & Sample Project**: See [TrackAsia iOS Document & Demo](https://github.com/track-asia/trackasia-ios-document) for detailed step-by-step integration and SwiftUI/UIKit samples.
+
+
 1. Open your project in Xcode.
 1. -> File -> Add Package Dependencies
 1. Enter the URL of this repository into the search field: https://github.com/track-asia/trackasia-navigation-ios
