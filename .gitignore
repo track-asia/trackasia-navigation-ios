@@ -147,4 +147,8 @@ xcuserdata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.toptal.com/developers/gitignore/api/xcode,swiftpackagemanager,swiftpm,swift,macos,carthage
+# End of https://www.toptal.com/developers/gitignore/api/xcode,swiftpackagemanager,swiftpm,swift,macos,carthage.history/
+.env
+signing-key.gpg
+/.history
+.history/
